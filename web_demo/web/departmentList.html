@@ -1,0 +1,683 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gramos - 部门列表</title>
+
+    <!--  引入jq  -->
+    <script src="assets/js/jquery.js"></script>
+
+    <!-- begin::global styles -->
+    <link rel="stylesheet" href="assets/vendors/bundle.css" type="text/css">
+    <!-- end::global styles -->
+
+    <!-- begin::custom styles -->
+    <link rel="stylesheet" href="assets/css/app.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/custom.css" type="text/css">
+    <!-- end::custom styles -->
+
+</head>
+<body>
+
+<!-- begin::page loader-->
+<div class="page-loader">
+    <div class="spinner-border"></div>
+    <span>Loading ...</span>
+</div>
+<!-- end::page loader -->
+
+<!-- begin::sidebar -->
+<div class="sidebar">
+    <ul class="nav nav-pills nav-justified m-b-30" id="pills-tab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link" id="notifications-tab" data-toggle="pill" href="#notifications" role="tab"
+               aria-controls="notifications" aria-selected="false">
+                <i class="fa fa-bell"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="settings-tab" data-toggle="pill" href="#settings" role="tab"
+               aria-controls="settings" aria-selected="false">
+                <i class="ti-settings"></i>
+            </a>
+        </li>
+    </ul>
+    <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane" id="notifications" role="tabpanel" aria-labelledby="notifications-tab">
+            <div class="tab-pane-body">
+                <h5 class="font-weight-bold m-b-20">Notifications</h5>
+                <div>
+                    <p class="text-muted">Today</p>
+                    <ul class="list-group list-group-flush m-b-10">
+                        <li class="list-group-item d-flex p-l-r-0">
+                            <div>
+                                <figure class="avatar avatar-xs m-r-10">
+                                    <span class="avatar-title bg-success rounded-circle">A</span>
+                                </figure>
+                            </div>
+                            <div>
+                                <p class="m-b-0">
+                                    <span class="badge small badge-danger">New</span>
+                                    New user registration.
+                                </p>
+                                <ul class="list-inline small">
+                                    <li class="list-inline-item text-muted">8 minute ago</li>
+                                    <li class="list-inline-item">
+                                        <a href="#">Mark Read</a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#">View</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex p-l-r-0">
+                            <div>
+                                <figure class="avatar avatar-xs m-r-10">
+                                    <span class="avatar-title rounded-circle">
+                                        <i class="fa fa-cloud-upload"></i>
+                                    </span>
+                                </figure>
+                            </div>
+                            <div>
+                                <p class="m-b-0">Files uploaded successfully.</p>
+                                <ul class="list-inline small">
+                                    <li class="list-inline-item text-muted">50 minute ago</li>
+                                    <li class="list-inline-item">
+                                        <a href="#">Mark Read</a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#">View</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="text-muted">Yesterday</p>
+                    <ul class="list-group list-group-flush m-b-10">
+                        <li class="list-group-item d-flex p-l-r-0">
+                            <div>
+                                <figure class="avatar avatar-xs m-r-10">
+                                    <span class="avatar-title bg-warning rounded-circle">V</span>
+                                </figure>
+                            </div>
+                            <div>
+                                <p class="m-b-0">New user registration.</p>
+                                <ul class="list-inline small">
+                                    <li class="list-inline-item text-muted">5 hours ago</li>
+                                    <li class="list-inline-item">
+                                        <a href="#">Mark Read</a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#">View</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex p-l-r-0">
+                            <div>
+                                <figure class="avatar avatar-xs m-r-10">
+                                    <span class="avatar-title rounded-circle">
+                                        <i class="fa fa-file-o"></i>
+                                    </span>
+                                </figure>
+                            </div>
+                            <div>
+                                <p class="m-b-0">Your invoice prepared.</p>
+                                <ul class="list-inline small">
+                                    <li class="list-inline-item text-muted">10 hours ago</li>
+                                    <li class="list-inline-item">
+                                        <a href="#">Mark Read</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex p-l-r-0">
+                            <div>
+                                <figure class="avatar avatar-xs m-r-10">
+                                    <span class="avatar-title rounded-circle">
+                                        <i class="fa fa-cloud-upload"></i>
+                                    </span>
+                                </figure>
+                            </div>
+                            <div>
+                                <p class="m-b-0">Files uploaded successfully.</p>
+                                <ul class="list-inline small">
+                                    <li class="list-inline-item text-muted">16 hours ago</li>
+                                    <li class="list-inline-item">
+                                        <a href="#">Mark Read</a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#">View</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tab-pane-footer">
+                <a href="#" class="btn btn-primary btn-block">Mark All Read</a>
+            </div>
+        </div>
+        <div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+            <div class="tab-pane-body">
+                <div class="m-b-30">
+                    <h5 class="font-weight-bold m-b-20">Settings</h5>
+                    <h6 class="font-weight-bold">System</h6>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between p-l-r-0">
+                            <span>Automatic updates</span>
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="customSwitch1" checked>
+                                <label class="custom-control-label" for="customSwitch1"></label>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between p-l-r-0">
+                            <span>Current statistics</span>
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="customSwitch2" checked>
+                                <label class="custom-control-label" for="customSwitch2"></label>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between p-l-r-0">
+                            <span>User suggestions</span>
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="customSwitch3" checked>
+                                <label class="custom-control-label" for="customSwitch3"></label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="m-b-30">
+                    <h6 class="font-weight-bold">Accout</h6>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between p-l-r-0">
+                            <span>Senior account security</span>
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="customSwitch4">
+                                <label class="custom-control-label" for="customSwitch4"></label>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between p-l-r-0">
+                            <span>Account protection</span>
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="customSwitch5" checked>
+                                <label class="custom-control-label" for="customSwitch5"></label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="m-b-30">
+                    <h6 class="font-weight-bold">Notifications</h6>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between p-l-r-0">
+                            <span>Browser notifications</span>
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="customSwitch6">
+                                <label class="custom-control-label" for="customSwitch6"></label>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between p-l-r-0">
+                            <span>Mobile notifications</span>
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="customSwitch7">
+                                <label class="custom-control-label" for="customSwitch7"></label>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between p-l-r-0">
+                            <span>Email subscription</span>
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="customSwitch8">
+                                <label class="custom-control-label" for="customSwitch8"></label>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between p-l-r-0">
+                            <span>Sms notifications</span>
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="customSwitch9" checked>
+                                <label class="custom-control-label" for="customSwitch9"></label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tab-pane-footer">
+                <a href="#" class="btn btn-primary btn-block">Save Settings</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end::sidebar -->
+
+<!-- begin::side menu -->
+<div class="side-menu">
+    <div class='side-menu-body'>
+        <ul>
+            <li class="side-menu-divider">Navigation</li>
+            <li>
+                <a href="index.html"><i class="icon ti-home"></i> <span>首页</span> </a>
+            </li>
+            <li class="open"><a href="#"><i class="icon ti-layers-alt"></i> <span>人员表</span> </a>
+                <ul>
+                    <li><a  href="manager_list.html">管理人员表</a></li>
+                    <li><a  href="employee_list.html">员工表</a></li>
+                    <li><a  href="position_list.html">职位表</a></li>
+                    <li><a class="active" href="departmentList.html">部门表</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="departmentInsert.html"><i class="icon ti-home"></i> <span>部门添加</span> </a>
+            </li>
+            <li >
+                <a href="#" >
+                    <i class="icon ti-pie-chart"></i>
+                    <span>图表</span>
+                </a>
+                <ul>
+                    <li><a href="AvgScore.html">部门统计</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- end::side menu -->
+
+<!-- begin::navbar -->
+<nav class="navbar">
+    <div class="container-fluid">
+
+        <div class="header-logo">
+            <a href="#">
+                <img src="assets/media/image/light-logo.png" alt="...">
+                <span class="logo-text d-none d-lg-block">Gramos</span>
+            </a>
+        </div>
+
+        <div class="header-body">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown d-none d-lg-block">
+                    <a href="#" class="nav-link" data-toggle="dropdown">
+                        <i class="fa fa-th-large"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-big dropdown-menu-nav-grid">
+                        <div class="dropdown-menu-title">Quick menu</div>
+                        <div class="dropdown-menu-body">
+                            <div class="nav-grid">
+                                <div class="nav-grid-row">
+                                    <a href="#" class="nav-grid-item">
+                                        <i class="fa fa-address-book-o"></i>
+                                        <span>App</span>
+                                    </a>
+                                    <a href="#" class="nav-grid-item">
+                                        <i class="fa fa-envelope-o"></i>
+                                        <span>Mail</span>
+                                    </a>
+                                </div>
+                                <div class="nav-grid-row">
+                                    <a href="#" class="nav-grid-item">
+                                        <i class="fa fa-sticky-note"></i>
+                                        <span>Chat</span>
+                                    </a>
+                                    <a href="#" class="nav-grid-item">
+                                        <i class="fa fa-dashboard"></i>
+                                        <span>Dashboard</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <form class="search">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search ..."
+                           aria-label="Recipient's username"
+                           aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                        <button class="btn" type="button" id="button-addon2">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="#" class="d-lg-none d-sm-block nav-link search-panel-open">
+                        <i class="fa fa-search"></i>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link nav-link-notify" data-toggle="dropdown">
+                        <i class="fa fa-envelope"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-big">
+                        <div class="dropdown-menu-title d-flex justify-content-between">
+                            <div>
+                                <h6 class="text-uppercase font-size-12 m-b-0">Messages</h6>
+                                <small class="font-size-11 opacity-7">1 unread messages</small>
+                            </div>
+                        </div>
+                        <div class="dropdown-menu-body">
+                            <ul class="list-group list-group-flush">
+                                <a href="#" class="list-group-item d-flex link-1 hide-show-toggler">
+                                    <div>
+                                        <figure class="avatar avatar-sm m-r-15">
+                                            <span class="avatar-title bg-success rounded-circle">M</span>
+                                        </figure>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <h6 class="m-b-0 d-flex justify-content-between">
+                                            Malanie Hanvey
+                                            <i title="Read Mark" data-toggle="tooltip"
+                                               class="hide-show-toggler-item fa fa-check font-size-11"></i>
+                                        </h6>
+                                        <span class="text-muted m-r-10 small">PM 08:50</span>
+                                        <span class="text-muted small">Have you mad...</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="list-group-item d-flex link-1 bg-light hide-show-toggler">
+                                    <div>
+                                        <figure class="avatar avatar-sm m-r-15">
+                                            <span class="avatar-title bg-primary rounded-circle">TB</span>
+                                        </figure>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <h6 class="m-b-0 d-flex justify-content-between">
+                                            Kenneth Hune
+                                            <i title="Read Mark" data-toggle="tooltip"
+                                               class="hide-show-toggler-item fa fa-circle-o font-size-11"></i>
+                                        </h6>
+                                        <span class="text-muted m-r-10 small">PM 10:23</span>
+                                        <span class="text-muted small">I have a meetin...</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="list-group-item d-flex align-items-center link-1 hide-show-toggler">
+                                    <div>
+                                        <figure class="avatar avatar-sm m-r-15">
+                                            <span class="avatar-title bg-danger rounded-circle">M</span>
+                                        </figure>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <h6 class="m-b-0 d-flex justify-content-between">
+                                            Kevin added
+                                            <i title="Read Mark" data-toggle="tooltip"
+                                               class="hide-show-toggler-item fa fa-check font-size-11"></i>
+                                        </h6>
+                                        <span class="text-muted m-r-10 small">PM 08:50</span>
+                                        <span class="text-muted small">Have you mad...</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="list-group-item d-flex align-items-center link-1 hide-show-toggler">
+                                    <div>
+                                        <figure class="avatar avatar-sm m-r-15">
+                                            <span class="avatar-title bg-info rounded-circle">KC</span>
+                                        </figure>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <h6 class="m-b-0 d-flex justify-content-between">
+                                            Katherine Ember
+                                            <i title="Read Mark" data-toggle="tooltip"
+                                               class="hide-show-toggler-item fa fa-check font-size-11"></i>
+                                        </h6>
+                                        <span class="text-muted m-r-10 small">PM 20:13</span>
+                                        <span class="text-muted small">I have a meetin...</span>
+                                    </div>
+                                </a>
+                            </ul>
+                        </div>
+                        <div class="dropdown-menu-footer text-right">
+                            <ul class="list-inline small">
+                                <li class="list-inline-item">
+                                    <a href="#">Mark All Read</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link nav-link-notify sidebar-open" data-sidebar-target="#notifications">
+                        <i class="fa fa-bell"></i>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" data-toggle="dropdown">
+                        <figure class="avatar avatar-sm avatar-state-success">
+                            <img class="rounded-circle" src="assets/media/image/avatar.jpg" alt="...">
+                        </figure>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a href="profile.html" class="dropdown-item">Profile</a>
+                        <a href="#" data-sidebar-target="#settings" class="sidebar-open dropdown-item">Settings</a>
+                        <div class="dropdown-divider"></div>
+                        <a href="login.html" class="text-danger dropdown-item">Logout</a>
+                    </div>
+                </li>
+                <li class="nav-item d-lg-none d-sm-block">
+                    <a href="#" class="nav-link side-menu-open">
+                        <i class="ti-menu"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+<!-- end::navbar -->
+
+<!-- begin::main content -->
+<main class="main-content">
+
+    <div class="container-fluid">
+
+        <!-- begin::page header -->
+        <div class="page-header d-md-flex justify-content-between align-items-center">
+            <h4>部门表</h4>
+        </div>
+        <!-- end::page header -->
+
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th scope="col">部门编号</th>
+                                    <th scope="col">部门名称</th>
+                                    <th scope="col">部门描述</th>
+                                </tr>
+                                </thead>
+
+                                <!--          在tbody中要插入数据节点【html】                      -->
+                                <tbody id="tbody_block">
+
+                                <!--编写登录的异步请求js代码-->
+                                <script>
+                                    //在页面加载时会发起异步请求
+                                    $(function () {
+                                        $.get('/web_demo/queryDepartment', function (result) {
+                                            //查询成功的结果
+                                            // console.log(result);
+                                            //循环遍历插入节点到tbody
+                                            for (let i=0;i<result.dep_list.length;i++) {
+                                                // console.log(result.user_list[i]);
+                                                //一行的tr
+                                                let tr = $('<tr></tr>');
+                                                //tr中添加一行中的多个单元格td
+                                                tr.append($(' <th scope="row">'+result.dep_list[i].d_id+'</th>'));
+                                                tr.append($(' <td>'+result.dep_list[i].d_name+'</td>'));
+                                                tr.append($(' <td>'+result.dep_list[i].d_describe+'</td>'));
+                                                tr.append($('<td>\n' +
+                                                    ' <button onclick="showUpdate(this)" data-toggle="modal" data-target=".update" class="btn btn-default btn-success" type="button">修改</button>\n' +
+                                                    ' <button onclick="showDelete(this)" data-toggle="modal" data-target=".delete" class="btn btn-default btn-danger" type="button">删除</button>\n' +
+                                                    '                                    </td>'));
+                                                //把tr节点插入到tbody中
+                                                $("#tbody_block").append(tr);
+                                            }
+                                        });
+                                    });
+                                </script>
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</main>
+<!-- end::main content -->
+
+
+
+<!--定义一个修改部门的模态框-->
+<!-- Modal -->
+<div class="modal fade update" tabindex="-1" role="dialog"
+     aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">部门修改信息</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form id="updateFrom">
+                <div class="modal-body">
+                    <div class="form-group wd-xs-300">
+                        <label>部门编号：</label>
+                        <input type="text" id="update_d_id" name="depid" v-model="student.s_id" class="form-control"
+                               placeholder="请输入部门编号" required>
+                    </div>
+                    <!-- form-group -->
+                    <div class="form-group wd-xs-300">
+                        <label>部门名称：</label>
+                        <input type="text" id="update_d_name" name="depname" v-model="student.s_name" class="form-control"
+                               placeholder="请输入部门名称" required>
+                    </div>
+                    <!-- form-group -->
+                    <div class="form-group wd-xs-300">
+                        <label>部门描述：</label>
+                        <input type="text" id="update_d_describe" name="describe" v-model="student.s_password" class="form-control"
+                               placeholder="请输入部门描述" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    </button>
+                    <button onclick="updateDepartment()" type="button"  class="btn btn-primary">Save changes
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--定义一个删除部门的模态框-->
+<!-- Modal -->
+<div class="modal fade delete" tabindex="-1" role="dialog"
+     aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">部门删除信息</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form id="deleteFrom">
+                <div class="modal-body">
+                    <div class="form-group wd-xs-300">
+                        <label>编号：</label>
+                        <input type="text" id="delete_m_id" name="depid" v-model="student.s_id" class="form-control"
+                               placeholder="请输入部门编号" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    </button>
+                    <button onclick="deleteDepartment()" type="button"  class="btn btn-primary">Save changes
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- begin::global scripts -->
+<!--定义js操作函数-->
+<script>
+    function showUpdate(btn){
+        let tr = btn.parentNode.parentNode;//btn-->td-->tr
+        //获取到三个数据
+        let update_id = $(tr.childNodes[0]).text();
+        let update_name = $(tr.childNodes[1]).text();
+        let update_describe = $(tr.childNodes[2]).text();
+        //显示到input标签中
+        $('#update_d_id').val(update_id);
+        $('#update_d_name').val(update_name);
+        $('#update_d_describe').val(update_describe);
+
+    }
+    //修改的操作函数
+    function updateDepartment() {
+        //1、获取表单中的数据
+        var data = $('#updateFrom').serializeArray();
+        console.log(data)
+        //2、提交登录post请求   第一个参数为url，第二个参数提交的数据，第三参数为成功之后的回调函数
+        $.post('/web_demo/depUpdate', data, function (result) {
+            //修改成功
+            if (result.ok == true) {
+                alert("修改成功");
+                //跳转mangerList.html页面
+                location.href = "departmentList.html";
+            } else {
+                alert(result.message);
+            }
+        });
+    }
+    function showDelete(btn) {
+        let tr = btn.parentNode.parentNode;//btn-->td-->tr
+        //获取到三个数据
+        let delete_id = $(tr.childNodes[0]).text();
+        $('#delete_m_id').val(delete_id);
+    }
+    function deleteDepartment() {
+
+        //1、获取表单中的数据
+        let data = $('#deleteFrom').serializeArray();
+        //2、提交登录post请求   第一个参数为url，第二个参数提交的数据，第三参数为成功之后的回调函数
+        $.post('/web_demo/depDelete', data, function (result) {
+            //修改成功
+            if (result.ok == true) {
+                alert("删除成功");
+                //跳转mangerList.html页面
+                location.href = "departmentList.html";
+            } else {
+                alert(result.message);
+            }
+        });
+    }
+</script>
+
+<script src="assets/vendors/bundle.js"></script>
+<!-- end::global scripts -->
+
+<!-- begin::custom scripts -->
+<script src="assets/js/custom.js"></script>
+<script src="assets/js/app.js"></script>
+<!-- end::custom scripts -->
+
+</body>
+</html>
