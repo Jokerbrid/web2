@@ -9,5 +9,5 @@ web_demo:
 
 
 person_manager:
-是计划采用springMVC来实现的版本，由于其他族员不熟悉框架的使用，因此作废。
+是计划采用springMVC来实现的版本，由于其他组员不熟悉框架的使用，因此作废。
 采用的是springmvc+springboot+mybatis技术进行表的增删改查。
